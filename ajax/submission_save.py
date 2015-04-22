@@ -5,6 +5,9 @@ import cgi, os,Cookie, sys, subprocess
 import stat,timeit
 from random import randint
 from connection import cursor, db
+from mixpanel import Mixpanel
+mp = Mixpanel("d4de82f1514bafcd4aea2120c5b1a5db")
+mp.track('page viewed', 'compilation Requests')
 try: # Windows needs stdio set for binary mode.
     import msvcrt
     msvcrt.setmode (0, os.O_BINARY) # stdin  = 0
@@ -17,6 +20,7 @@ if 'HTTP_COOKIE' in os.environ:
 	cookie_string=os.environ.get('HTTP_COOKIE')
 	c=Cookie.SimpleCookie()
 	c.load(cookie_string)
+	mp.track(c['name'].value, 'compilation Requests')
 #problem_id = '27'
 #assignment_id = '22'
 #student_id = 'ranjeetkumar692@gmail.com'
