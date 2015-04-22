@@ -9,15 +9,7 @@ acourse="select * from courses"
 connection.cursor.execute(acourse)
 all_courses=connection.cursor.fetchall()
 
-user=""
-
-if 'HTTP_COOKIE' in os.environ:
-	cookie_string=os.environ.get('HTTP_COOKIE')
-	c=Cookie.SimpleCookie()
-	c.load(cookie_string)
-	user = c['name'].value
-	
 TEMPLATE_FILE = "/var/www/html/acourse.html" 
-templateVars = { "all_courses":all_courses, "name":user}
+templateVars = { "all_courses":all_courses}
 template = templateEnv.get_template( TEMPLATE_FILE )
 print template.render(templateVars)
