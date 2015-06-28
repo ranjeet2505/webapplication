@@ -9,7 +9,7 @@ from mixpanel import Mixpanel
 from jinja2 import Template, Environment, FileSystemLoader
 #for error reporting
 cgitb.enable()
-mp = Mixpanel("d4de82f1514bafcd4aea2120c5b1a5db")
+mp = Mixpanel("25fad57ef2b1fbf474516adf5357abf7")
 mp.track('page viewed', 'landingPage');
 #what is the use of this line
 templateLoader = FileSystemLoader( searchpath="/" )

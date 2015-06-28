@@ -31,7 +31,7 @@ if c['type'].value == "teacher":
 		data1 = cursor.fetchall()
 		#print data1
 		#l.append(data1[0])
-		var=var+'<tr><td>'+str(data1[0][0])+'</td><td>'+str(data1[0][4])+'</td><td>'+str(data1[0][3])+'</td><td>'+str(data1[0][1])+'</td><td>'+str(data1[0][2])+'</td><td><button type="button" class="btn btn-info btn-block" id="'+str(data1[0][1])+'" onclick=approveEnroll(this.id)>Approve</button></td></tr>'
+		var=var+'<tr><td>'+str(data1[0][0])+'</td><td>'+str(data1[0][4])+'</td><td>'+str(data1[0][3])+'</td><td>'+str(data1[0][1])+'</td><td>'+str(data1[0][2])+'</td><td><button type="button" class="btn btn-info bg-olive" id="'+str(data1[0][1])+'" onclick=approveEnroll(this.id)>Approve</button></td></tr>'
 
 	
 	TEMPLATE_FILE = "/var/www/html/teacher/enroll_request.html"

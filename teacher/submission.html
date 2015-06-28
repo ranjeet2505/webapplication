@@ -4,82 +4,236 @@
 		{{ super() }}
 		<meta http-equiv="Cache-Control" Content="no-cache, no-store, must-revalidate ,max-age=0,s-maxage=0, proxy revalidate">
 		<meta http-equiv ="Pragma" Content="no-cache">
-		<meta http-equiv ="Expires" Content="0">	
+		<meta http-equiv ="Expires" Content="0">
 		<style type="text/css" media="screen">
-			#code_editor{height:600px;}
+			#code_editor{height:400px;}
 		</style>
 	{% endblock %}
 	{% block content %}
-		<!-- wrapper -->
-		<div id="wrapper">
-			<!--navbar-->
-			<p id="header"></p>
-			<!--navbar end-->
-			<!--page wrapper-->
-			<div id="page-wrapper">
-				<!--<div class="row">
-            	    <div class="col-lg-12">
-            	        <h1 class="page-header">Assignment</h1>
-            	    </div>
-            	    <!-- .col-lg-12 >
-            	</div>-->
-            	<div class="row">
-					<div class="col-md-3">
-						<select id="assignment_select" class="form-control input-sm">
-							<option value="-1">assignment</option>
-								{% for row in assignment %}
-							<option value="{{ row[0] }}">{{ row[1] }}</option>
-								{% endfor %}
-						</select>
+		<!-- Main content -->
+
+        <section class="content">
+    	<div class="row">
+			<div class="col-md-3">
+				<select id="assignment_select" class="form-control input-sm">
+					<option value="-1">assignment</option>
+						{% for row in assignment %}
+					<option value="{{ row[0] }}">{{ row[1] }}</option>
+						{% endfor %}
+				</select>
+			</div>
+			<div class="col-md-4">
+				<select id="problem_select" class="form-control input-sm">
+					<option value="select a problem">Select a problem</option>
+				</select>
+			</div>
+			<div class="col-md-2">
+				<p id="download"></p>
+			</div>
+			<div class="col-md-3">
+				<p id="mail"></p>
+			</div>
+		</div>
+		<hr/>
+		<div class="row">
+			<div class="col-md-2">
+				<div class="box box-primary">
+					<div class="box-header">
+						<h3 class="box-title">
+							<div class="box-tools">
+						        <ul class="pagination pagination-sm no-margin">
+						          <li><a href="#"><i class="fa fa-angle-double-left"></i></a></li>
+						          <li><a href="#">1</a></li>
+						          <li><a href="#">2</a></li>
+						          <li><a href="#"><i class="fa fa-angle-double-right"></i></a></li>
+						        </ul>
+		              		</div>
+		              	</h3>
 					</div>
-					<div class="col-md-4">
-						<select id="problem_select" class="form-control input-sm">
-							<option value="select a problem">Select a problem</option>					
-						</select>
+					<div class="box-body">
+						<table class="table">
+							<tbody>
+								<tr>
+									<td>
+										<a href="#">12MCMC27</a>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<a href="#">12MCMC27</a>
+									</td>
+								</tr>
+							</tbody>
+						</table>
 					</div>
-					<div class="col-md-2">
-						<p id="download"></p>
-					</div>
-					<div class="col-md-3">
-						<p id="mail"></p>
+					<div class="box-header">
+						<h3 class="box-title">
+							<div class="box-tools">
+						        <ul class="pagination pagination-sm no-margin">
+						          <li><a href="#"><i class="fa fa-angle-double-left"></i></a></li>
+						          <li><a href="#">1</a></li>
+						          <li><a href="#">2</a></li>
+						          <li><a href="#"><i class="fa fa-angle-double-right"></i></a></li>
+						        </ul>
+		              		</div>
+		              	</h3>
 					</div>
 				</div>
-				<hr/>
-				<div class="row">
-					<div class="col-md-9">
-						<pre id="code_editor"></pre>
-						<hr/>
-						<form action="/" method="POST" id="feedbackForm">
-							<div class="panel panel-default feedback_panel">
-								<div class="panel-body">
-									<strong>Feedback </strong>
-								</div>
-								<div class="panel-footer">
-									<textarea class="form-control" name="feed" id="feed" rows="3" placeholder="first select assignment, problem and student then enter text here and press submit button once and wait for message of successful operation"></textarea>
-									<br/>
-									 <button type="submit" class="btn btn-warning">Submit</button>
+			</div>
 
-								</div>
-							</div>	
-							
-						</form>
+			<div class="col-md-4">
+				<div class="box box-danger">
+					<div class="box-header with-border">
+						<h3 class="box-title">Student</h3>
+						<h3 class="box-title pull-right"><i class="fa fa-user"></i></h3>
 					</div>
-					<div class="col-md-3">
-						<div class="list-group" id="submission_list">   
-                	</div>
-				</div>	
-					
-			</div>	
-        	<!-- end page-wrapper-->
-        	
-        </div>
-        <!--wrapper-->
+					<div class="box-body">
+						<div class="row">
+							<div class="col-md-12">
+								<p><span class="col-md-4" style="font-weight:600;">Name </span>&nbsp;&nbsp;<span>Ranjeet Kumar</span></p>
+								<p><span class="col-md-4" style="font-weight:600;">Email</span>&nbsp;&nbsp;<span>ranjeetkumar692@gmail.com</span></p>
+								<p><span class="col-md-4" style="font-weight:600;">ID #</span>&nbsp;&nbsp;<span>12MCMC27</span></p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="box box-warning">
+					<div class="box-header with-border">
+						<h3 class="box-title"> <span>Summary</span></h3>
+						 <h3 class="box-title pull-right"><i class="fa fa-pie-chart"></i></h3>
+					</div>
+					<div class="box-body no-padding">
+						<div class="row">
+							<div class="col-md-5 chart-responsive">
+								<canvas id="myChart" width="150" height="150"></canvas>
+							</div>
+							<div class="col-md-7">
+								<ul class="nav nav-pills nav-stacked">
+								    <li><a href="#">Problem 1 <span class="pull-right text-red"> 80%</span></a></li>
+								    <li><a href="#">Problem 2 <span class="pull-right text-green"> 100%</span></a></li>
+								    <li><a href="#">Problem 3 <span class="pull-right text-yellow"> 70%</span></a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="box box-info">
+					<div class="box-header with-border">
+						<h3 class="box-title"> <span>Test Cases</span></h3>
+						 <h3 class="box-title pull-right"><i class="fa fa-terminal"></i></h3>
+					</div>
+					<div class="box-body">
+						<div class="row">
+							<div class="col-md-2">
+								<span style="font-weight:600">#</span>
+							</div>
+							<div class="col-md-2">
+								<span style="font-weight:600">Type</span>
+							</div>
+							<div class="col-md-2">
+								<span style="font-weight:600">Time</span>
+							</div>
+							<div class="col-md-2">
+								<span style="font-weight:600">Memory</span>
+							</div>
+							<div class="col-md-1">
+
+							</div>
+							<div class="col-md-3">
+								<span style="font-weight:600">Status</span>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-md-2">
+								1
+							</div>
+							<div class="col-md-2">
+								Easy
+							</div>
+							<div class="col-md-2">
+								2.00
+							</div>
+							<div class="col-md-2">
+								453
+							</div>
+							<div class="col-md-1">
+
+							</div>
+							<div class="col-md-3">
+								True
+							</div>
+						</div>
+					</div>
+				</div>
+           	</div>
+           	<div class="col-md-6">
+				<div class="box box-success">
+					<div class="box-header with-border">
+						<h3 class="box-title"><i class="fa fa-code"></i>&nbsp;Problem 1</h3>
+						<div class="box-tools pull-right">
+							<div class="btn-group">
+								<button class="btn btn-box-tool ">
+									<i class="fa fa-comment-o"></i>
+								</button>
+								<button class="btn btn-box-tool ">
+									<i class="fa fa-download"></i>
+								</button>
+								<button class="btn btn-box-tool dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+									<i class="fa fa-wrench"></i>
+								</button>
+								<button class="btn btn-box-tool">
+									<i class="fa fa-arrows-alt"></i>
+								</button>
+								<ul role="menu" class="dropdown-menu">
+						            <li><a href="#">Dark</a></li>
+						            <li><a href="#">Light</a></li>
+						            <li class="divider"></li>
+						            <li><a href="#">VIM</a></li>
+						            <li><a href="#">EMACS</a></li>
+						            <li class="divider"></li>
+						            <li><a href="#">Full Screen</a></li>
+						        </ul>
+							</div>
+						</div>
+					</div>
+					<div class="box-body no-padding">
+						<pre id="code_editor"></pre>
+						<div class="box box-danger collapsed-box">
+							<div class="box-header">
+								<h4 class="box-title">Custom Input</h4>
+								<div class="box-tools pull-right">
+									<div class="btn-group">
+										<button class="btn btn-box-tool" data-widget="collapse">
+											<i class="fa fa-plus"></i>
+										</button>
+									</div>
+								</div>
+							</div>
+							<div class="box-body">
+								<textarea placeholder="Input" rows="2" class="form-control"></textarea>
+								<button type="button" class="btn btn-sm btn-success pull-right">Run</button>
+							</div>
+						</div>
+						<div>
+							<div class="col-sm-6">
+                    <input type="text" value="" class="slider form-control" data-slider-min="-200" data-slider-max="200" data-slider-step="5" data-slider-value="[-100,100]" data-slider-orientation="horizontal" data-slider-selection="before" data-slider-tooltip="show" data-slider-id="red">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		</section><!-- /.content -->
         {{ super() }}
 		<script src="http://www.neoscript.in/ace-builds-master/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+		<!-- Bootstrap slider -->
+    	<script src="plugins/bootstrap-slider/bootstrap-slider.js" type="text/javascript"></script>
+    	<script type="text/javascript" src="plugins/chartjs/Chart.min.js"></script>
 		<script>
 			var email = ''
 			var editor = ace.edit("code_editor");
-			/*$( document ).ready(function() {	
+			/*$( document ).ready(function() {
 					editor.setTheme("ace/theme/chrome");
 					editor.getSession().setMode("ace/mode/java");
 					alert("mode");
@@ -99,7 +253,7 @@
 						}
 					}).done(function(data){
 						console.log(data);
-						
+
 				});
 			});
 			$("#problem_select").change(function(e){
@@ -114,7 +268,7 @@
 						}
 					}).done(function(data){
 						console.log(data);
-						
+
 				});
 			});
 			function load_code(eid, fname, name)
@@ -131,7 +285,7 @@
 								 $("#mail").html('<strong style="color:#337ab7;">'+name+'</strong>');
 							},
 							error:function(response){
-								
+
 							}
 						});
 			}
@@ -146,13 +300,164 @@
 						success: function(response)
 						{
 							alert(response)
-							//$(".feedback_panel").hide(); 
+							//$(".feedback_panel").hide();
 							//$("#feedbackBox").html("Thanks for your feedback!!")
 						}
 					});
 					return false; // avoid to execute the actual submit of the form.
 			});
+
+			 $(function () {
+        		/* BOOTSTRAP SLIDER */
+		        $('.slider').slider();
+		     });
+
+		     // Get context with jQuery - using jQuery's .get() method.
+			var ctx = $("#myChart").get(0).getContext("2d");
+			// This will get the first returned node in the jQuery collection.
+			var myNewChart = new Chart(ctx);
+			// And for a doughnut chart
+
+
+			var data = [
+				{
+					value: 300,
+					color:"#00a65a",
+					highlight: "#00a65e",
+					label: "Red"
+				},
+				{
+					value: 50,
+					color: "#46BFBD",
+					highlight: "#5AD3D1",
+					label: "Green"
+				},
+				{
+					value: 100,
+					color: "#FDB45C",
+					highlight: "#FFC870",
+					label: "Yellow"
+				}
+			]
+			var myDoughnutChart = new Chart(ctx).Doughnut(data, {
+				animateScale: true
+			});
+
+			var record = [
+				{
+					studentId: 'ranjeetkumar692@gmail.com',
+					name: 'Ranjeet Kumar',
+					regNumber: '12MCMC27',
+					assignment:{
+						id: 1,
+						title: 'String Manupulation',
+						type: {
+							code:[
+								{
+									id: 30,
+									title: 'Reverse String',
+									score: 80,
+									file: 'string.java',
+									testcase: [{
+										id:1,
+										type:'easy',
+										time: '0.322',
+										memory: '342',
+										status: true
+									},
+									{
+										id:2,
+										type:'mild',
+										time: '0.922',
+										memory: '1342',
+										status: true
+									},
+									{
+										id:3,
+										type:'hard',
+										time: '1.222',
+										memory: '2442',
+										status: false
+									},
+									{
+										id:4,
+										type: 'easy',
+										time: '1.023',
+										memory: '1879',
+										status:true
+									}
+								]
+							},
+							{
+								id: 31,
+								title: 'Palindrome String',
+								score: 90,
+								file: 'palindrome.java',
+								testcase: [
+									{
+										id:1,
+										type:'mild',
+										time: '0.352',
+										memory: '463',
+										status: true
+									},
+									{
+										id:2,
+										type:'easy',
+										time: '0.645',
+										memory: '1862',
+										status: false
+									},
+									{
+										id:3,
+										type:'hard',
+										time: '1.222',
+										memory: '2442',
+										status: true
+									},
+									{
+										id:4,
+										type: 'easy',
+										time: '1.023',
+										memory: '1879',
+										status:true
+									}
+								]
+							}
+						],
+						mcq:[
+							{
+								id:2,
+								title:'String MCQ Test',
+								score:100,
+								problem:[
+									{
+										id:34,
+										question:'sdnjkfnsw',
+										option:[{'option1', 'option2', 'option3', 'option4'}],
+										answer:'option1',
+										correct: true
+									},
+									{
+										id:35,
+										question:'afewgreger',
+										option:[{'option1', 'option2', 'option3', 'option4'}],
+										answer:'option1',
+										correct: true
+									},
+									{
+										id:36,
+										question:'fewhfioe',
+										option:[{'option1', 'option2', 'option3', 'option4'}],
+										answer:'option1',
+										correct: false
+									}
+								]
+							}
+						]
+						}
+					}
+				}
+			]
 		</script>
-	
-	
 {% endblock %}

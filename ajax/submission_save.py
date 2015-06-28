@@ -6,7 +6,7 @@ import stat,timeit
 from random import randint
 from connection import cursor, db
 from mixpanel import Mixpanel
-mp = Mixpanel("d4de82f1514bafcd4aea2120c5b1a5db")
+mp = Mixpanel("25fad57ef2b1fbf474516adf5357abf7")
 mp.track('page viewed', 'compilation Requests')
 try: # Windows needs stdio set for binary mode.
     import msvcrt

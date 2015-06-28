@@ -13,13 +13,8 @@
 	</script>
 	{% endblock %}
 	{% block content %}
-		<div id="wrapper">
-
-        <!-- Navigation -->
-       
-        <p id="header"></p>
-        <div id="page-wrapper">
-		
+		<!-- Main content -->
+        <section class="content">
 		<div class="panel panel-default">
 			<div class="panel-body">		
 			<form method="POST" action="store.py" >
@@ -110,11 +105,8 @@
 			</form>
 		</div>
 	</div>
-
-	 </div>
-        <!-- /#page-wrapper -->
-
-    </div>
-    <!-- /#wrapper -->
+	</section>
+	<div class='control-sidebar-bg'></div>
+	<div style="position: fixed; bottom: 20px; right: 25px; width: 40px; height: 40px; color: rgb(238, 238, 238); line-height: 40px; text-align: center; background-color: rgb(34, 45, 50); cursor: pointer; border-radius: 5px; z-index: 99999; opacity: 0.7;"><i class="fa fa-chevron-up"></i></div>
 {{ super() }}
 {% endblock %}

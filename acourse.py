@@ -6,7 +6,7 @@ print "Content-Type: text/html\n\n"
 templateLoader = FileSystemLoader( searchpath="/" )
 templateEnv = Environment( loader=templateLoader )
 from mixpanel import Mixpanel
-mp = Mixpanel("d4de82f1514bafcd4aea2120c5b1a5db")
+mp = Mixpanel("25fad57ef2b1fbf474516adf5357abf7")
 mp.track('page viewed', 'acourse w/0 login');
 acourse="select * from courses"
 connection.cursor.execute(acourse)

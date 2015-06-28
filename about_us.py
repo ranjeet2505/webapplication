@@ -4,7 +4,7 @@ import cgi,cgitb,Cookie,os
 from jinja2 import Template, Environment, FileSystemLoader 
 print "Content-Type: text/html; charset=UTF-8\n\n"
 from mixpanel import Mixpanel
-mp = Mixpanel("d4de82f1514bafcd4aea2120c5b1a5db")
+mp = Mixpanel("25fad57ef2b1fbf474516adf5357abf7")
 mp.track('page viewed', 'about_us');
 templateLoader = FileSystemLoader( searchpath="/" )
 templateEnv = Environment( loader=templateLoader )

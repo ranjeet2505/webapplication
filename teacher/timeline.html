@@ -7,26 +7,18 @@
 		<meta http-equiv ="Expires" Content="0">	
 	{% endblock %}
 	{% block content %}
-		<!-- wrapper -->
-		<div id="wrapper">
-			<!--navbar-->
-			<p id="header"></p>
-			<!--navbar end-->
-			<!--page wrapper-->
-			<div id="page-wrapper">
-				<div class="row">
-                	<div class="col-lg-12">
-                	    <h1 class="page-header">Timeline</h1>
-                	</div>
-                	<!-- /.col-lg-12 -->
-            	</div>
+		<!-- Content Header (Page header) -->
+        <section class="content-header">
+          <h1>
+            Timeline
+            <small>Programming in C</small>
+          </h1>
+        </section>
+        <!-- Main content -->
+        <section class="content">
 			{{content}}
 			<hr/>
 			<a href="javascript:void(0);" NAME="Timeline Editor" title="Edit content of timeline in new window" onClick=window.open("../content_editor.py?edit=timeline&cid={{cid}}","Ratting","width=850,height=570,0,status=0,");><button type="button" class="btn btn-primary">Edit Timeline</button></a> 
-			</div>
-
-			<!--end page-wrapper -->
-		</div>
-		<!-- end wrapper -->
-			{{ super() }}
+		</section>
+	{{ super() }}
 {% endblock %}

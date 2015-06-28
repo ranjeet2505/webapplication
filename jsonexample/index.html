@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		
+	</head>
+	<body>
+		<script src="http://www.neoscript.in/js/jquery.js"></script>
+		<script>
+			$( document ).ready(function() {
+			
+				$.ajax({
+						type: "POST",
+						url: "https://api.cloudboost.io/api/commentzxdsa/save",
+						contentType: "application/json; charset=utf-8",
+						Accept: "application/json",
+						data: JSON.stringify({document:{ _type:"custom",text:"ancndbg",name:"Danny",_tableName:"cmmnt",ACL:{read:["all"],write:["all"]}},key:"O+8b8H1/AGTC2eLh1GzXjw=="}), 
+						//data: { name: "Ranjeet", text:"sdvfs"}
+						success: function(response){
+						
+							console.log(response);
+						},
+						error: function(response){
+						}
+				});
+			});
+		</script>
+	</body>
+</html>

@@ -7,25 +7,18 @@
 		<meta http-equiv ="Expires" Content="0">	
 	{% endblock %}
 	{% block content %}
-		<!-- wrapper -->
-		<div id="wrapper">
-			<!--navbar-->
-			<p id="header"></p>
-			<!--navbar end-->
-			<!--page wrapper-->
-			<div id="page-wrapper">
-				<div class="row">
-                			<div class="col-lg-12">
-        	        	    	<h1 class="page-header">Syllabus</h1>
-                			</div>
-                			<!-- /.col-lg-12 -->
-            			</div>
-				{{content}}
-				<hr/>
-				<a href="javascript:void(0);" NAME="Syllabus Editor" title="Edit content of syllabus in new window" onClick=window.open("../content_editor.py?edit=syllabus&cid={{cid}}","Ratting","width=850,height=570,0,status=0,");><button type="button" class="btn btn-primary">Edit Syllabus Content</button></a> 
-			</div>
-			<!--end page-wrapper -->
-		</div>
-		<!-- end wrapper -->
+		<!-- Content Header (Page header) -->
+        <section class="content-header">
+          <h1>
+            Syllabus
+            <small>Programming in C</small>
+          </h1>
+        </section>
+        <!-- Main content -->
+        <section class="content">
+			{{content}}
+			<hr/>
+			<a href="javascript:void(0);" NAME="Syllabus Editor" title="Edit content of syllabus in new window" onClick=window.open("../content_editor.py?edit=syllabus&cid={{cid}}","Ratting","width=850,height=570,0,status=0,");><button type="button" class="btn btn-primary">Edit Syllabus Content</button></a>
+		</section>
 		{{ super() }}
 {% endblock %}

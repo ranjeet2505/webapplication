@@ -7,27 +7,18 @@
 		<meta http-equiv ="Expires" Content="0">	
 	{% endblock %}
 	{% block content %}
-		<!-- wrapper -->
-		<div id="wrapper">
-			<!--navbar-->
-			<p id="header"></p>
-			<!--navbar end-->
-			<!--page wrapper-->
-			<div id="page-wrapper">
-				<div class="row">
-                	<div class="col-lg-12">
-                	    <h1 class="page-header">Documents</h1>
-                	</div>
-                	<!-- /.col-lg-12 -->
-            	</div>
+		<!-- Content Header (Page header) -->
+        <section class="content-header">
+          <h1>
+            Document
+            <small>Programming in C</small>
+          </h1>
+        </section>
+        <!-- Main content -->
+        <section class="content">
 			{{content}}
-			<a href="javascript:void(0);" NAME="Document Editor" title="Edit content of documents in new window" onClick=window.open("../content_editor.py?edit=links&cid={{cid}}","Ratting","width=850,height=870,0,status=0,");><button type="button" class="btn btn-primary">Edit Document Content</button></a> 
-			</div>
-			<!--end page-wrapper -->
-			<footer>
-			{{ footer }}
-			</footer>
-		</div>
-		<!-- end wrapper -->
-		{{ super() }}
+		
+		<a href="javascript:void(0);" NAME="Document Editor" title="Edit content of documents in new window" onClick=window.open("../content_editor.py?edit=links&cid={{cid}}","Ratting","width=850,height=870,0,status=0,");><button type="button" class="btn btn-primary">Edit Document Content</button></a> 
+		</section>
+	{{ super() }}
 {% endblock %}
